@@ -1,5 +1,12 @@
-const NewMessage = () => {
+import { connect } from 'react-redux'
 
-}
+import NewMessageComponent from '../components/NewMessage'
+import { newMessage } from '../actions'
 
-export default NewMessage
+const mapDispatchToProps = dispatch => ({
+  dispatch: (message, author) => {
+    dispatch(newMessage(message, author))
+  }
+})
+
+export const NewMessage = connect(() => ({}), mapDispatchToProps)(NewMessageComponent)

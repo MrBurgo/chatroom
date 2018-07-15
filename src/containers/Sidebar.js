@@ -1,7 +1,5 @@
-import React from 'react'
+import { connect } from 'react-redux'
 
-const Sidebar = () => {
+import SidebarComponent from '../components/Sidebar'
 
-}
-
-export default Sidebar
+export const Sidebar = connect(state => ({ users: state.users }), {})(SidebarComponent)
