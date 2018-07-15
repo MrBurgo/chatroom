@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
 
-class App extends Component {
+import Sidebar from './containers/Sidebar'
+import MessageList from './containers/MessageList'
+import NewMessage from './containers/NewMessage'
+import './App.css'
+
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id="container">
+        <Sidebar />
+        <section id="main">
+          <MessageList />
+          <NewMessage />
+        </section>
       </div>
-    );
+    )
   }
 }
-
-export default App;
